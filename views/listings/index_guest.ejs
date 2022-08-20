@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/images/icons/yer.ico"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/map.css" />
+    <title>My Listings</title>
+  
+</head>
+<body>
+  <%- include('nav_guest') %> 
+
+    <div class="container centered-element">
+      <div class="row">    
+        <% for(let list of lists){ %> 
+            <div class="col-sm">
+                <div class="card cards" style="width: 20rem;">
+                    <img src=<%=list.image %> class="card-img-top" alt="<%=list.listname%>">
+                    <div class="card-body">
+                      <h6 class="card-title fs-5 fw-bold"><strong><%=list.listname%></strong></h6>
+                      <hr>
+                      <p class="card-text lead"><%=list.uploader%></p>
+                      <p class="card-text lead "><%=list.description%></p>
+                      <hr>
+                      <p class="card-text fs-6 fw-bold"><%=list.address%></p>
+                     
+                      <a href="/listings/<%=list._id%>/show_guest" class="btn btn-primary">more details</a>
+                    </div>
+                  </div>
+              </div>  
+        <% } %>   
+      </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+

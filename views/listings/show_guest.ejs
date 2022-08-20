@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="/images/icons/yer.ico"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title><%=lists.listname %> </title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <link rel="stylesheet" type="text/css" href="/css/map.css" />
+    <link rel="stylesheet" type="text/css" href="/js/map.js" />
+
+    <% let lats = lists.latitude,
+    long = lists.longitude%> 
+<%- include('map') %>  
+</head>
+</head>
+<body> 
+  <%- include('nav_guest') %> 
+
+        <div class="container centered-element">
+          <div class="row">
+
+            <div class="card mb-4">
+              <div class="card" style = "border: 30px;">
+                  <img src=<%=lists.image %> class=" " alt="<%=lists.listname%>" style = "padding: 30px;" >                          
+                </div>
+              </div>
+                  <div class="card" style="border-left: 50px">
+                      <div class="card-body">
+                        <h6 class="card-title lead fw-bold fs-4"><strong><%=lists.listname%></strong></h6>
+                        <hr>
+                        <p class="card-text rating lead fw-bold"><%=lists.uploader%></p>
+                        <p class="card-text rating lead  lh-base"><%=lists.details%></p>
+                        <hr>
+                        <p class="card-text rating lead fw-bold"><%=lists.address%></p>
+                        <p class="card-text rating lead fw-bold fs-6"><%=lists.posted_date%></p>
+                      </div>             
+                    </div>
+
+                                
+                  <div class="card mb-3" id = "reviews" style = "padding-left: 16px;border: 30px;">
+                    <div class="card" style="width: 81.5rem;border-left: 50px" index = "reviews">
+                      <div class="card-body">
+                        <h5 class="card-title lead fw-bold"><strong>Reviews</strong></h5>
+                        <hr>
+
+                        <% for (let i = 0; i < lists.reviews.length; i++) { %> 
+                        <ul>
+                        
+                        <li><p class="card-text rating lead"><%=lists.reviews[i]%></p></li>
+                        </ul>
+                        <% } %> 
+                      </div>
+                    </div>
+                            
+                    <div class="card" style="width: 81.5rem; padding-left: 30px; border: 30px;">
+                      <h4  class="card-title lead fw-bold" style = "padding: 10px;"><%= lists.listname %> </h4>
+                      <div class="card-body">
+                        <div class="mapouter">
+                        <div class="gmap_canvas">
+                          <iframe
+                            width="1200"
+                            height="800"
+                            frameborder="0" style="border:0"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            src = <%=lists.location %>
+                            allowfullscreen>
+                          </iframe>
+                  </div>
+                  </div>
+                </div>
+              </div>
+                </div>
+        </div>
+     
+    
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDRMNRhLnyj5Qw3TT9oyIeStPpIwZHfNSA&callback=initMap" defer></script>
+   
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script> 
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,46 @@
+  <head>
+  <link rel="icon" type="image/png" href="/images/icons/yer.ico"/>
+  <style>
+    a:hover {
+    color: white;  
+    background-color: #03AA6D;
+    }
+
+    .dropdown-menu:hover { 
+      background-color: #03AA6D;
+    }
+
+</style>
+  </head>
+  <nav class="navbar fixed-top  navbar-expand-lg navbar-light " style="background-color: #5AB2FF; font-size: large;">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarToggler">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+        <li class="nav-item active">
+          <a class="nav-link"  href="/user" style = "color: white; font-weight: bold;">Home<span class="sr-only"></span></a>
+        </li>
+
+        <li class="nav-item active">
+          <div class="dropdown show">
+            <a class="btn btn-primary dropdown-toggle" href="#" role="button" id="Select" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Action Menu
+            </a>
+          
+            <div class="dropdown-menu" >
+              <!--<a class="dropdown-item" href="/login " style = "color: green; font-weight: bold;">Log-in</a>
+              <a class="dropdown-item" href="/register" style = "color: blue; font-weight: bold;">Sign Up</a> -->
+              <form action="/logout" method="post">
+                <button class="dropdown-item" type="submit" style = "color: red; font-weight: bold;">Logout</button>
+            </form>
+            </div>
+          </div>
+        </li>
+
+      </ul>
+    </div>
+  </nav>
+
